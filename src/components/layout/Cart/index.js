@@ -18,13 +18,23 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 <h5 className="mt-0">{prod.title}</h5>
                 <div className="total__part">
                   {formatCurrency(prod.price)} x {prod.count}{" "}
-                  <button className="button">Remove</button>
+                  <button
+                    className="button"
+                    onClick={() => removeFromCart(prod)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             </div>
           ))}
           <div>
-            <div className="grand__total">SubTotal: $25.9</div>
+            <div className="grand__total">
+              SubTotal:{" "}
+              {formatCurrency(
+                cartItems.reduce((a, c) => a + c.price * c.count, 0)
+              )}
+            </div>
             <button className="button">View Cart</button>
           </div>
         </div>

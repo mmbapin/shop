@@ -11,12 +11,12 @@ export const addToCart = (product) => (dispatch, getState) => {
   });
   if (!alreadyExists) {
     cartItems.push({ ...product, count: 1 });
-    dispatch({
-      type: ADD_TO_CART,
-      payload: { cartItems },
-    });
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
+  dispatch({
+    type: ADD_TO_CART,
+    payload: { cartItems },
+  });
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
 export const removeFromCart = (product) => (dispatch, getState) => {
