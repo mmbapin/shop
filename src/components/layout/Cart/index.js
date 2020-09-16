@@ -2,6 +2,7 @@ import React from "react";
 import formatCurrency from "../../../util";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../../actions/CartAction";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cartItems, removeFromCart }) => {
   return (
@@ -35,7 +36,9 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 cartItems.reduce((a, c) => a + c.price * c.count, 0)
               )}
             </div>
-            <button className="button">View Cart</button>
+            <Link to="/view-cart">
+              <button className="button">View Cart</button>
+            </Link>
           </div>
         </div>
       )}

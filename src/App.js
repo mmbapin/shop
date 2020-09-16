@@ -1,31 +1,19 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter, Route } from "react-router-dom";
 import store from "./store";
-import ProductList from "./components/layout/ProductList";
-import Cart from "./components/layout/Cart";
-import Filter from "./components/common/Filter";
-import Header from "./components/layout/Header";
+import HomeScreen from "./screen/HomeScreen";
+import ProductDetails from "./screen/ProductDetails";
+import ViewCart from "./screen/ViewCart";
 
 function App() {
   return (
     <Provider store={store}>
-      <Fragment>
-        <div className="App">
-          <Header />
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-xl-8">
-                <Filter />
-                <ProductList />
-              </div>
-              <div className="col-xl-4">
-                <h3>Cart</h3>
-                <Cart />
-              </div>
-            </div>
-          </div>
-        </div>
-      </Fragment>
+      <BrowserRouter>
+        <Route path="/" component={HomeScreen} exact />
+        <Route path="/product-details" component={ProductDetails} exact />
+        <Route path="/view-cart" component={ViewCart} exact />
+      </BrowserRouter>
     </Provider>
   );
 }

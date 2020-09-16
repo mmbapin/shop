@@ -33,7 +33,6 @@ export const sortProductItem = (sortVal, items) => (dispatch) => {
         : 1
     );
   }
-  console.log("Action Value : ", sortedProduct);
   dispatch({
     type: SORT_PRODUCT,
     payload: {
