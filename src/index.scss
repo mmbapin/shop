@@ -1,0 +1,28 @@
+.product__card {
+  border-radius: 0px;
+  margin-bottom: 20px;
+  .card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+    .card-title {
+      font-size: 18px;
+      line-height: 25px;
+      color: #000000;
+    }
+  }
+}
+
+.filter__parts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cart___img {
+  width: 100px;
+  height: 100px;
+}
+
+.cart__media {
+  margin-bottom: 20px;
+}
